@@ -3,7 +3,8 @@ import joblib
 import os
 
 app = Flask(__name__)
-model = joblib.load("C:/Users/kshan/OneDrive/Desktop/ChromeTime/backend/model.pkl")
+import os
+model = joblib.load(os.path.join(os.path.dirname(__file__), "model.pkl"))
 
 @app.route('/predict', methods=['POST'])
 def predict():
