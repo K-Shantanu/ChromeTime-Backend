@@ -3,9 +3,7 @@ from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
-
-# Allow requests from your extension's origin
-CORS(app, origins=["chrome-extension://ffpllnbcpmollbjcpgfmhkecdnpohjpf"])
+CORS(app)
 
 model = joblib.load("model.pkl")
 
